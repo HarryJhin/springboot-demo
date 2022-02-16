@@ -1,8 +1,9 @@
 package com.example.springbootdemo.web;
 
 import com.example.springbootdemo.service.posts.PostsService;
-import com.example.springbootdemo.web.dto.PostsRequestDto;
+import com.example.springbootdemo.web.dto.PostsRespoenseDto;
 import com.example.springbootdemo.web.dto.PostsSaveRequestDto;
+import com.example.springbootdemo.web.dto.PostsUpdateRequestDto;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,12 +26,12 @@ public class PostsApiController {
     }
 
     @PutMapping("/api/v1/posts/{id}")
-    public Long update (@PathVariable Long id, @RequestBody PostsRequestDto requestDto) {
+    public Long update (@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsRequestDto findById(@PathVariable Long id) {
+    public PostsRespoenseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
 }
