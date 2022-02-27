@@ -17,7 +17,7 @@ import lombok.Getter;
 public abstract class BaseTimeEntity {
     
     @CreatedDate // 엔티티가 생성되어 저장될 때 시간이 자동 저장
-    private LocalDateTime createdTime;
+    private LocalDateTime createdDate;
 
     @LastModifiedDate // 조회한 엔티티의 값을 변경할 때 시간이 자동 저장
     private LocalDateTime modifiedDate;
