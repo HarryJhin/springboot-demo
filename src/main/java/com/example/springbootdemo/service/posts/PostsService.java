@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import com.example.springbootdemo.domain.posts.Posts;
 import com.example.springbootdemo.domain.posts.PostsRepository;
 import com.example.springbootdemo.web.dto.PostsListResponseDto;
-import com.example.springbootdemo.web.dto.PostsRespoenseDto;
+import com.example.springbootdemo.web.dto.PostsResponseDto;
 import com.example.springbootdemo.web.dto.PostsSaveRequestDto;
 import com.example.springbootdemo.web.dto.PostsUpdateRequestDto;
 
@@ -35,10 +35,10 @@ public class PostsService {
         return id;
     }
     
-    public PostsRespoenseDto findById (Long id) {
+    public PostsResponseDto findById (Long id) {
         Posts entity = postsRepository.findById(id).orElseThrow(()->new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
 
-        return new PostsRespoenseDto(entity);
+        return new PostsResponseDto(entity);
     }
 
     @Transactional(readOnly = true)

@@ -1,7 +1,7 @@
 package com.example.springbootdemo.web;
 
 import com.example.springbootdemo.service.posts.PostsService;
-import com.example.springbootdemo.web.dto.PostsRespoenseDto;
+import com.example.springbootdemo.web.dto.PostsResponseDto;
 import com.example.springbootdemo.web.dto.PostsSaveRequestDto;
 import com.example.springbootdemo.web.dto.PostsUpdateRequestDto;
 
@@ -31,7 +31,7 @@ public class PostsApiController {
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsRespoenseDto findById(@PathVariable Long id) {
+    public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
 }
